@@ -31,7 +31,7 @@ body {
   margin-top: 0;
   font-size: 1.5rem;
 }
-.loaction-info {
+.location-info {
   position: absolute;
   top: 80px;
   right: 50px;
@@ -45,11 +45,11 @@ body {
   color: whitesmoke;
 }
 
-.loaction-info ul {
+.location-info ul {
   list-style: none;
   padding: 0;
 }
-.loaction-info li {
+.location-info li {
   padding: 5px 0;
 }
 

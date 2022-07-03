@@ -1,19 +1,19 @@
 import GoogleMapReact from "google-map-react";
-import LoactionMarker from "./LoactionMarker";
-import LoactionInfoBox from "./LoactionInfoBox";
+import LocationMarker from "./LocationMarker";
+import LocationInfoBox from "./LocationInfoBox";
 import { useState } from "react";
 
 const API_KEY = "AIzaSyCj_qqL_ij4TNRVrDGjUgGQNHv9W5OV1ls";
 
 const Map = ({ eventData, center, zoom }) => {
-  const [locationInfo, setLocationInfo] = useState(null);
+  const [locationInfo, setLocationInfo] = useState();
 
   const markers = eventData.map((ev) => {
-    if (ev.categories[0].id === 8) {
+    if (ev.categories[0].id === "wildfires") {
       return (
-        <LoactionMarker
-          lat={ev.geometries[0].coordinates[1]}
-          lng={ev.geometries[0].coordinates[0]}
+        <LocationMarker
+          lat={ev.geometry[0].coordinates[1]}
+          lng={ev.geometry[0].coordinates[0]}
           onClick={() =>
             setLocationInfo({
               id: ev.id,
@@ -34,7 +34,7 @@ const Map = ({ eventData, center, zoom }) => {
       >
         {markers}
       </GoogleMapReact>
-      {locationInfo && <LoactionInfoBox info={locationInfo} />}
+      {locationInfo && <LocationInfoBox info={locationInfo} />}
     </div>
   );
 };

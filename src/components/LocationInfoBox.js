@@ -1,6 +1,6 @@
-const LoactionInfoBox = ({ info }) => {
+const LocationInfoBox = ({ info }) => {
   return (
-    <div className="loaction-info">
+    <div className="location-info">
       <h2>Event Location Info</h2>
       <ul>
         <li>
@@ -14,4 +14,4 @@ const LoactionInfoBox = ({ info }) => {
   );
 };
 
-export default LoactionInfoBox;
+export default LocationInfoBox;
